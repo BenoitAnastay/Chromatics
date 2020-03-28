@@ -522,6 +522,10 @@ namespace Chromatics
             {"ColorMappingJobFSHBase", new[] { "FSH (Base)", "12", "Black", "White"}},
             {"ColorMappingJobFSHHighlight", new[] { "FSH (Highlight)", "12", "Black", "White"}},
             {"ColorMappingKeybindTetragrammaton", new[] { "Spell Tetragrammaton", "12", "Black", "White"}},
+            {"ColorMappingKeybindMedica", new[] { "Spell Medica", "12", "Black", "White"}},
+            {"ColorMappingKeybindAero", new[] { "Spell Aero", "12", "Black", "White"}},
+            {"ColorMappingKeybindRaise", new[] { "Spell Raise", "12", "Black", "White"}},
+            {"ColorMappingKeybindStone", new[] { "Spell Stone", "12", "Black", "White"}},
         };
 
 

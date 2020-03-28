@@ -5587,6 +5587,78 @@ namespace Chromatics
                                                                                                 .ColorMappingKeybindTetragrammaton),
                                                                                         false);
                                                                                     break;
+                                                                                case "Medica II":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindMedica),
+                                                                                        false);
+                                                                                    break;
+                                                                                case "Medica":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindMedica),
+                                                                                        false);
+                                                                                    break;
+                                                                                case "Aero II":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindAero),
+                                                                                        false);
+                                                                                    break;
+                                                                                case "Aero":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindAero),
+                                                                                        false);
+                                                                                    break;
+                                                                                case "Raise":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindRaise),
+                                                                                        false);
+                                                                                    break;
+                                                                                case "Stone IV":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindStone),
+                                                                                        false);
+                                                                                    break;
+                                                                                case "Stone III":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindStone),
+                                                                                        false);
+                                                                                    break;
+                                                                                case "Stone II":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindStone),
+                                                                                        false);
+                                                                                    break;
+                                                                                case "Stone":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindStone),
+                                                                                        false);
+                                                                                    break;
                                                                                 default:
                                                                                     GlobalApplyMapKeypadBINDLighting(
                                                                                     bind.Key,
