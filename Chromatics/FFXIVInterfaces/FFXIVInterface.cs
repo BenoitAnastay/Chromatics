@@ -4614,12 +4614,11 @@ namespace Chromatics
 
                                             foreach (var action in hotbar.ActionItems)
                                             {
-                                                action.ActionKey = action.ActionKey.ToUpper();
-                                                action.KeyBinds = action.KeyBinds.ToUpper();
                                                 if (!action.IsKeyBindAssigned || string.IsNullOrEmpty(action.Name) ||
                                                     string.IsNullOrEmpty(action.KeyBinds) ||
                                                     string.IsNullOrEmpty(action.ActionKey)) continue;
-
+                                                action.ActionKey = action.ActionKey.ToUpper();
+                                                action.KeyBinds = action.KeyBinds.ToUpper();
                                                 //Console.WriteLine(action.ActionKey);
 
                                                 //Collect Modifier Info
