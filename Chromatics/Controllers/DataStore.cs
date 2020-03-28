@@ -796,6 +796,8 @@ namespace Chromatics.Datastore
         public string ColorMappingJobBTNHighlight = ColorTranslator.ToHtml(Color.Yellow);
         public string ColorMappingJobFSHBase = ColorTranslator.ToHtml(Color.DeepSkyBlue);
         public string ColorMappingJobFSHHighlight = ColorTranslator.ToHtml(Color.White);
+        public string ColorMappingKeybindTetragrammaton = ColorTranslator.ToHtml(Color.DeepSkyBlue);
+
     }
 
     public static class DataStoreFunctions

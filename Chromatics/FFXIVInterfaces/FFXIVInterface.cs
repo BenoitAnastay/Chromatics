@@ -4614,6 +4614,8 @@ namespace Chromatics
 
                                             foreach (var action in hotbar.ActionItems)
                                             {
+                                                action.ActionKey = action.ActionKey.ToUpper();
+                                                action.KeyBinds = action.KeyBinds.ToUpper();
                                                 if (!action.IsKeyBindAssigned || string.IsNullOrEmpty(action.Name) ||
                                                     string.IsNullOrEmpty(action.KeyBinds) ||
                                                     string.IsNullOrEmpty(action.ActionKey)) continue;
@@ -5575,12 +5577,25 @@ namespace Chromatics
 
                                                                         if (action.ActionKey == bind.Value && _KeyBindModMap[bind.Key] == modKey)
                                                                         {
-                                                                            GlobalApplyMapKeypadBINDLighting(
-                                                                                bind.Key,
-                                                                                ColorTranslator.FromHtml(
-                                                                                    ColorMappings
-                                                                                        .ColorMappingHotbarReady),
-                                                                                false);
+                                                                            switch(action.Name)
+                                                                            {
+                                                                                case "Tetragrammaton":
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                        bind.Key,
+                                                                                        ColorTranslator.FromHtml(
+                                                                                            ColorMappings
+                                                                                                .ColorMappingKeybindTetragrammaton),
+                                                                                        false);
+                                                                                    break;
+                                                                                default:
+                                                                                    GlobalApplyMapKeypadBINDLighting(
+                                                                                    bind.Key,
+                                                                                    ColorTranslator.FromHtml(
+                                                                                        ColorMappings
+                                                                                            .ColorMappingHotbarReady),
+                                                                                    false);
+                                                                                    break;
+                                                                            }
                                                                         }
                                                                     }
                                                             }

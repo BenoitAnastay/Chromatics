@@ -521,6 +521,7 @@ namespace Chromatics
             {"ColorMappingJobBTNHighlight", new[] { "BTN (Highlight)", "12", "Black", "White"}},
             {"ColorMappingJobFSHBase", new[] { "FSH (Base)", "12", "Black", "White"}},
             {"ColorMappingJobFSHHighlight", new[] { "FSH (Highlight)", "12", "Black", "White"}},
+            {"ColorMappingKeybindTetragrammaton", new[] { "Spell Tetragrammaton", "12", "Black", "White"}},
         };
 
 
