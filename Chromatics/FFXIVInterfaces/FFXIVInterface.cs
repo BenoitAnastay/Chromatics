@@ -4730,7 +4730,7 @@ namespace Chromatics
                                                 if (_EnableKeypadBinds)
                                                 {
                                                     
-                                                    if (action.Category == 49 || action.Category == 51)
+                                                    if (action.Category == 49 || action.Category == 51 || action.Category == 55)
                                                     {
                                                         foreach (var bind in _KeyBindMap)
                                                         {

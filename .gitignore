@@ -214,3 +214,8 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 *.snk
+Build Dependencies/actions.json
+Build Dependencies/signatures-x64.json
+Build Dependencies/statuses.json
+Build Dependencies/structures-x64.json
+Build Dependencies/zones.json
