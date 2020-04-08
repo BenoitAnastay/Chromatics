@@ -925,6 +925,9 @@ namespace Chromatics
         //Send a lighting command to a specific Keyboard LED
         public void GlobalApplyMapKeyLighting(string key, Color col, bool clear, [Optional] bool bypasswhitelist)
         {
+            if (key[0] == 'F')
+                return;
+
             if (_KeysSingleKeyModeEnabled || _KeysMultiKeyModeEnabled)
                 return;
 
@@ -1044,6 +1047,40 @@ namespace Chromatics
             {
                 _asus.ApplyMapKeyLighting(Localization.LocalizeKey(key), col, clear, bypasswhitelist);
             }
+        }
+
+        public void GlobalApplyMapFKeyLighting(string key, Color col, bool clear, [Optional] bool bypasswhitelist)
+        {
+            bypasswhitelist = true;
+            if (key[0] != 'F')
+                return;
+
+            if (_KeysSingleKeyModeEnabled || _KeysMultiKeyModeEnabled)
+                return;
+
+            if (RazerSdkCalled == 1)
+                _razer.ApplyMapKeyLighting(key, col, clear, bypasswhitelist);
+
+            if (LogitechSdkCalled == 1)
+                _logitech.ApplyMapKeyLighting(key, col, clear, bypasswhitelist);
+
+            if (CorsairSdkCalled == 1)
+                    _corsair.ApplyMapKeyLighting(key, col, clear, bypasswhitelist);
+
+            if (CoolermasterSdkCalled == 1)
+                _coolermaster.ApplyMapKeyLighting(key, col, clear, bypasswhitelist);
+
+            if (SteelSdkCalled == 1)
+                    _steel.ApplyMapKeyLighting(key, col, clear, bypasswhitelist);
+            
+
+            if (WootingSdkCalled == 1)
+                    _wooting.ApplyMapKeyLighting(key, col, clear, bypasswhitelist);
+            
+
+            if (AsusSdkCalled == 1)
+                _asus.ApplyMapKeyLighting(Localization.LocalizeKey(key), col, clear, bypasswhitelist);
+            
         }
 
         public void GlobalApplyMapLightbarLighting(string key, Color col, bool clear, [Optional] bool bypasswhitelist)

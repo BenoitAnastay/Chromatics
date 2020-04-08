@@ -1220,7 +1220,7 @@ using EasyHttp.Http;
                             {
                                 foreach (var f in DeviceEffects.Functions)
                                 {
-                                    GlobalApplyMapKeyLighting(f, _baseStanceColor, false, false);
+                                    GlobalApplyMapFKeyLighting(f, _baseStanceColor, false, false);
                                 }
                             }
 
@@ -1477,7 +1477,7 @@ using EasyHttp.Http;
                             {
                                 foreach (var f in DeviceEffects.Functions)
                                 {
-                                    GlobalApplyMapKeyLighting(f, _baseJobColor, false, false);
+                                    GlobalApplyMapFKeyLighting(f, _baseJobColor, false, false);
                                 }
                             }
 
@@ -1568,7 +1568,7 @@ using EasyHttp.Http;
                                     {
                                         foreach (var f in DeviceEffects.Functions)
                                         {
-                                            GlobalApplyMapKeyLighting(f, ColorTranslator.FromHtml(ColorMappings.ColorMappingBaseColor), false, false);
+                                            GlobalApplyMapFKeyLighting(f, ColorTranslator.FromHtml(ColorMappings.ColorMappingBaseColor), false, false);
                                         }
                                     }
 
@@ -1644,7 +1644,7 @@ using EasyHttp.Http;
                                     {
                                         foreach (var f in DeviceEffects.Functions)
                                         {
-                                            GlobalApplyMapKeyLighting(f, ColorTranslator.FromHtml(weatherMapbase), false, false);
+                                            GlobalApplyMapFKeyLighting(f, ColorTranslator.FromHtml(weatherMapbase), false, false);
                                         }
                                     }
 
@@ -1869,14 +1869,14 @@ using EasyHttp.Http;
                                 {
                                     foreach (var f in DeviceEffects.Functions)
                                     {
-                                        GlobalApplyMapKeyLighting(f, _baseColor, false, false);
+                                        GlobalApplyMapFKeyLighting(f, _baseColor, false, false);
                                     }
                                 }
                                 else if (_FKeyMode == FKeyMode.HighlightColor)
                                 {
                                     foreach (var f in DeviceEffects.Functions)
                                     {
-                                        GlobalApplyMapKeyLighting(f, highlightColor, false, false);
+                                        GlobalApplyMapFKeyLighting(f, highlightColor, false, false);
                                     }
                                 }
 
@@ -2602,7 +2602,7 @@ using EasyHttp.Http;
 
                                         for (int i = 0; i < FKTargetHp_Collection.Length; i++)
                                         {
-                                            GlobalApplyMapKeyLighting(FKTargetHp_Collection[i],
+                                            GlobalApplyMapFKeyLighting(FKTargetHp_Collection[i],
                                                 FKTargetHp_Interpolate > i
                                                 ? ColorTranslator.FromHtml(ColorMappings
                                                     .ColorMappingTargetHpFriendly)
@@ -2641,7 +2641,7 @@ using EasyHttp.Http;
 
                                         for (int i = 0; i < FKTargetHp_Collection.Length; i++)
                                         {
-                                            GlobalApplyMapKeyLighting(FKTargetHp_Collection[i],
+                                            GlobalApplyMapFKeyLighting(FKTargetHp_Collection[i],
                                                 FKTargetHp_Interpolate > i
                                                 ? ColorTranslator.FromHtml(
                                                     ColorMappings.ColorMappingTargetCasting)
@@ -2950,7 +2950,7 @@ using EasyHttp.Http;
 
                                         for (int i = 0; i < FKTargetHp_Collection.Length; i++)
                                         {
-                                            GlobalApplyMapKeyLighting(FKTargetHp_Collection[i],
+                                            GlobalApplyMapFKeyLighting(FKTargetHp_Collection[i],
                                                 FKTargetHp_Interpolate > i
                                                 ? ColorTranslator.FromHtml(
                                                     ColorMappings.ColorMappingTargetHpClaimed)
@@ -2989,7 +2989,7 @@ using EasyHttp.Http;
 
                                         for (int i = 0; i < FKTargetHp_Collection.Length; i++)
                                         {
-                                            GlobalApplyMapKeyLighting(FKTargetHp_Collection[i],
+                                            GlobalApplyMapFKeyLighting(FKTargetHp_Collection[i],
                                                 FKTargetHp_Interpolate > i
                                                 ? ColorTranslator.FromHtml(
                                                     ColorMappings.ColorMappingTargetCasting)
@@ -3357,7 +3357,7 @@ using EasyHttp.Http;
                                                 {
                                                     foreach (var f in DeviceEffects.Functions)
                                                     {
-                                                        GlobalApplyMapKeyLighting(f, colEm0, false);
+                                                        GlobalApplyMapFKeyLighting(f, colEm0, false);
                                                     }
                                                 }
 
@@ -3438,7 +3438,7 @@ using EasyHttp.Http;
                                                 {
                                                     foreach (var f in DeviceEffects.Functions)
                                                     {
-                                                        GlobalApplyMapKeyLighting(f, colEm1, false);
+                                                        GlobalApplyMapFKeyLighting(f, colEm1, false);
                                                     }
                                                 }
 
@@ -3519,7 +3519,7 @@ using EasyHttp.Http;
                                                 {
                                                     foreach (var f in DeviceEffects.Functions)
                                                     {
-                                                        GlobalApplyMapKeyLighting(f, colEm2, false);
+                                                        GlobalApplyMapFKeyLighting(f, colEm2, false);
                                                     }
                                                 }
 
@@ -3600,7 +3600,7 @@ using EasyHttp.Http;
                                                 {
                                                     foreach (var f in DeviceEffects.Functions)
                                                     {
-                                                        GlobalApplyMapKeyLighting(f, colEm3, false);
+                                                        GlobalApplyMapFKeyLighting(f, colEm3, false);
                                                     }
                                                 }
 
@@ -3681,7 +3681,7 @@ using EasyHttp.Http;
                                                 {
                                                     foreach (var f in DeviceEffects.Functions)
                                                     {
-                                                        GlobalApplyMapKeyLighting(f, colEm4, false);
+                                                        GlobalApplyMapFKeyLighting(f, colEm4, false);
                                                     }
                                                 }
 
@@ -3760,7 +3760,7 @@ using EasyHttp.Http;
                                             {
                                                 foreach (var f in DeviceEffects.Functions)
                                                 {
-                                                    GlobalApplyMapKeyLighting(f, colEm0, false);
+                                                    GlobalApplyMapFKeyLighting(f, colEm0, false);
                                                 }
                                             }
 
@@ -3837,7 +3837,7 @@ using EasyHttp.Http;
                                     {
                                         foreach (var f in DeviceEffects.Functions)
                                         {
-                                            GlobalApplyMapKeyLighting(f, _baseColor, false);
+                                            GlobalApplyMapFKeyLighting(f, _baseColor, false);
                                         }
                                     }
 
@@ -3955,7 +3955,7 @@ using EasyHttp.Http;
                                 {
                                     foreach (var f in DeviceEffects.Functions)
                                     {
-                                        GlobalApplyMapKeyLighting(f, _baseColor, false);
+                                        GlobalApplyMapFKeyLighting(f, _baseColor, false);
                                     }
                                 }
 
@@ -4014,7 +4014,7 @@ using EasyHttp.Http;
                                     if (Castcharge_Interpolate >= i && ChromaticsSettings.ChromaticsSettingsCastToggle)
                                     {
                                         if (_FKeyMode != FKeyMode.TargetCastbar)
-                                        GlobalApplyMapKeyLighting(Castcharge_Collection[i], colCastcharge, false);
+                                        GlobalApplyMapFKeyLighting(Castcharge_Collection[i], colCastcharge, false);
 
                                         if (i == Castcharge_Collection.Length - 1) _successcast = true;
                                     }
@@ -4251,7 +4251,7 @@ using EasyHttp.Http;
                                             col = colHpcritical;
                                         }
 
-                                        GlobalApplyMapKeyLighting(HpFunction_Collection[i],
+                                        GlobalApplyMapFKeyLighting(HpFunction_Collection[i],
                                             HpFunction_Interpolate > i ? col : colHpempty, false);
                                     }
                                 }
@@ -4279,7 +4279,7 @@ using EasyHttp.Http;
                                             col = colHpcritical;
                                         }
 
-                                        GlobalApplyMapKeyLighting(HpFunction_Collection[i],
+                                        GlobalApplyMapFKeyLighting(HpFunction_Collection[i],
                                             HpFunction_Interpolate > i ? col : colHpempty, false);
                                     }
                                 }
@@ -4305,7 +4305,7 @@ using EasyHttp.Http;
                                             col = colHpcritical;
                                         }
 
-                                        GlobalApplyMapKeyLighting(HpFunction_Collection[i],
+                                        GlobalApplyMapFKeyLighting(HpFunction_Collection[i],
                                             HpFunction_Interpolate > i ? col : colHpempty, false);
                                     }
                                 }
@@ -4446,7 +4446,7 @@ using EasyHttp.Http;
                                             break;
                                         }
 
-                                        GlobalApplyMapKeyLighting(MpFunction_Collection[i],
+                                        GlobalApplyMapFKeyLighting(MpFunction_Collection[i],
                                             MpFunction_Interpolate > i ? colMpfull : colMpempty, false);
                                     }
                                 }
@@ -4466,7 +4466,7 @@ using EasyHttp.Http;
                                             break;
                                         }
 
-                                        GlobalApplyMapKeyLighting(MpFunction_Collection[i],
+                                        GlobalApplyMapFKeyLighting(MpFunction_Collection[i],
                                             MpFunction_Interpolate > i ? colMpfull : colMpempty, false);
                                     }
                                 }
@@ -4485,7 +4485,7 @@ using EasyHttp.Http;
                                             break;
                                         }
 
-                                        GlobalApplyMapKeyLighting(MpFunction_Collection[i],
+                                        GlobalApplyMapFKeyLighting(MpFunction_Collection[i],
                                             MpFunction_Interpolate > i ? colMpfull : colMpempty, false);
                                     }
                                 }
@@ -4619,6 +4619,7 @@ using EasyHttp.Http;
                                                     string.IsNullOrEmpty(action.ActionKey)) continue;
                                                 action.ActionKey = action.ActionKey.ToUpper();
                                                 action.KeyBinds = action.KeyBinds.ToUpper();
+                                                
                                                 //Console.WriteLine(action.ActionKey);
 
                                                 //Collect Modifier Info
@@ -4725,7 +4726,7 @@ using EasyHttp.Http;
                                                 {
                                                     modKey = Modifiers.None;
                                                 }
-                                                
+
                                                 //Assign Lighting
                                                 //Keypads
                                                 if (_EnableKeypadBinds)
@@ -5822,10 +5823,10 @@ using EasyHttp.Http;
                                                 }
                                             }
 
-                                            if (modKey == pushedKey)
+                                                if (modKey == pushedKey && action.ActionKey[0] != 'F')
                                             {
                                                     //Keyboards
-                                                var _modKey = modKey == Modifiers.None ? "No" : "Yes";
+                                                    var _modKey = modKey == Modifiers.None ? "No" : "Yes";
                                                 if (!FfxivHotbar.KeybindsActive.Contains(action.ActionKey + "|" + _modKey))
                                                 FfxivHotbar.KeybindsActive.Add(action.ActionKey + "|" + _modKey);
 
@@ -6518,7 +6519,7 @@ using EasyHttp.Http;
                                                     }
                                                 }
                                             }
-                                        }
+                                            }
 
                                         FfxivHotbar.KeybindsActive.Clear();
                                     }
@@ -6529,12 +6530,13 @@ using EasyHttp.Http;
                                     FfxivHotbar.Keybindwhitelist.Clear();
 
                                     FfxivHotbar.KeybindsActive.Clear();
-
-                                    foreach (var key in FfxivHotbar.Keybindtranslation)
-                                    {
-                                        GlobalApplyMapKeyLighting(key.Value, _baseColor, false);
-                                    }
-
+                                   
+                                   foreach (var key in FfxivHotbar.Keybindtranslation)
+                                   {
+                                            if (key.Value[0] != 'F')
+                                                GlobalApplyMapKeyLighting(key.Value, _baseColor, false);
+                                   }
+                                   
                                     if (_EnableKeypadBinds)
                                     {
                                         foreach (var bind in _KeyBindMap)
@@ -6850,7 +6852,7 @@ using EasyHttp.Http;
                                 {
                                     foreach (var f in DeviceEffects.Functions)
                                     {
-                                        GlobalApplyMapKeyLighting(f, ColorTranslator.FromHtml(ColorMappings.ColorMappingExpMax), false, false);
+                                        GlobalApplyMapFKeyLighting(f, ColorTranslator.FromHtml(ColorMappings.ColorMappingExpMax), false, false);
                                     }
                                 }
                             }
@@ -6884,7 +6886,7 @@ using EasyHttp.Http;
 
                                         for (var i2 = 0; i2 < FKExp_Collection.Length; i2++)
                                         {
-                                            GlobalApplyMapKeyLighting(FKExp_Collection[i2],
+                                            GlobalApplyMapFKeyLighting(FKExp_Collection[i2],
                                                 FKExp_Interpolate > i2 ? expcolfull : expcolempty, false, false);
                                         }
                                     }
@@ -6939,7 +6941,7 @@ using EasyHttp.Http;
 
                                         for (var i2 = 0; i2 < FKPullCount_Collection.Length; i2++)
                                         {
-                                            GlobalApplyMapKeyLighting(FKPullCount_Collection[i2],
+                                            GlobalApplyMapFKeyLighting(FKPullCount_Collection[i2],
                                                 FKPullCount_Interpolate > i2
                                                 ? ColorTranslator.FromHtml(ColorMappings
                                                     .ColorMappingPullCountdownTick)
@@ -6984,7 +6986,7 @@ using EasyHttp.Http;
                                                 break;
                                             }
 
-                                            GlobalApplyMapKeyLighting(FKPullCount_Collection[i2],
+                                            GlobalApplyMapFKeyLighting(FKPullCount_Collection[i2],
                                                 ColorTranslator.FromHtml(ColorMappings
                                                     .ColorMappingPullCountdownEmpty),
                                                 false, false);
@@ -7333,7 +7335,7 @@ using EasyHttp.Http;
                                                                 var FKACTTrigger_Collection = DeviceEffects.Functions;
                                                                 for (var i2 = 0; i2 < FKACTTrigger_Collection.Length; i2++)
                                                                 {
-                                                                    GlobalApplyMapKeyLighting(FKACTTrigger_Collection[i2],
+                                                                    GlobalApplyMapFKeyLighting(FKACTTrigger_Collection[i2],
                                                                         ColorTranslator.FromHtml(ColorMappings
                                                                             .ColorMappingACTThresholdSuccess), false, false);
                                                                 }
@@ -7381,7 +7383,7 @@ using EasyHttp.Http;
                                                                         break;
                                                                     }
 
-                                                                    GlobalApplyMapKeyLighting(FKACTTrigger_Collection[i2],
+                                                                    GlobalApplyMapFKeyLighting(FKACTTrigger_Collection[i2],
                                                                         ColorTranslator.FromHtml(ColorMappings
                                                                             .ColorMappingACTCustomTriggerIdle), false, false);
                                                                 }
@@ -7456,7 +7458,7 @@ using EasyHttp.Http;
                                                                 var FKACTTimer_Collection = DeviceEffects.Functions;
                                                                 for (var i2 = 0; i2 < FKACTTimer_Collection.Length; i2++)
                                                                 {
-                                                                    GlobalApplyMapKeyLighting(FKACTTimer_Collection[i2],
+                                                                    GlobalApplyMapFKeyLighting(FKACTTimer_Collection[i2],
                                                                         ColorTranslator.FromHtml(ColorMappings
                                                                             .ColorMappingACTTimerBuild), false, false);
                                                                 }
@@ -7762,7 +7764,7 @@ using EasyHttp.Http;
                                                                 {
                                                                     for (var i2 = 0; i2 < FKACTDPS_Collection.Length; i2++)
                                                                     {
-                                                                        GlobalApplyMapKeyLighting(FKACTDPS_Collection[i2],
+                                                                        GlobalApplyMapFKeyLighting(FKACTDPS_Collection[i2],
                                                                             ColorTranslator.FromHtml(ColorMappings
                                                                                 .ColorMappingACTThresholdSuccess), false,
                                                                             false);
@@ -8090,7 +8092,7 @@ using EasyHttp.Http;
                                                                 {
                                                                     for (var i2 = 0; i2 < FKACTHPS_Collection.Length; i2++)
                                                                     {
-                                                                        GlobalApplyMapKeyLighting(FKACTHPS_Collection[i2],
+                                                                        GlobalApplyMapFKeyLighting(FKACTHPS_Collection[i2],
                                                                             ColorTranslator.FromHtml(ColorMappings
                                                                                 .ColorMappingACTThresholdSuccess), false,
                                                                             false);
@@ -8417,7 +8419,7 @@ using EasyHttp.Http;
                                                                 {
                                                                     for (var i2 = 0; i2 < FKACTGroupDPS_Collection.Length; i2++)
                                                                     {
-                                                                        GlobalApplyMapKeyLighting(FKACTGroupDPS_Collection[i2],
+                                                                        GlobalApplyMapFKeyLighting(FKACTGroupDPS_Collection[i2],
                                                                             ColorTranslator.FromHtml(ColorMappings
                                                                                 .ColorMappingACTThresholdSuccess), false,
                                                                             false);
@@ -8756,7 +8758,7 @@ using EasyHttp.Http;
                                                                 {
                                                                     for (var i2 = 0; i2 < FKACTCrit_Collection.Length; i2++)
                                                                     {
-                                                                        GlobalApplyMapKeyLighting(FKACTCrit_Collection[i2],
+                                                                        GlobalApplyMapFKeyLighting(FKACTCrit_Collection[i2],
                                                                             ColorTranslator.FromHtml(ColorMappings
                                                                                 .ColorMappingACTThresholdSuccess), false,
                                                                             false);
@@ -9082,7 +9084,7 @@ using EasyHttp.Http;
                                                                 {
                                                                     for (var i2 = 0; i2 < FKACTDH_Collection.Length; i2++)
                                                                     {
-                                                                        GlobalApplyMapKeyLighting(FKACTDH_Collection[i2],
+                                                                        GlobalApplyMapFKeyLighting(FKACTDH_Collection[i2],
                                                                             ColorTranslator.FromHtml(ColorMappings
                                                                                 .ColorMappingACTThresholdSuccess), false,
                                                                             false);
@@ -9412,7 +9414,7 @@ using EasyHttp.Http;
                                                                 {
                                                                     for (var i2 = 0; i2 < FKACTCritDH_Collection.Length; i2++)
                                                                     {
-                                                                        GlobalApplyMapKeyLighting(FKACTCritDH_Collection[i2],
+                                                                        GlobalApplyMapFKeyLighting(FKACTCritDH_Collection[i2],
                                                                             ColorTranslator.FromHtml(ColorMappings
                                                                                 .ColorMappingACTThresholdSuccess), false,
                                                                             false);
@@ -9747,7 +9749,7 @@ using EasyHttp.Http;
                                                                 {
                                                                     for (var i2 = 0; i2 < FKACTOverheal_Collection.Length; i2++)
                                                                     {
-                                                                        GlobalApplyMapKeyLighting(FKACTOverheal_Collection[i2],
+                                                                        GlobalApplyMapFKeyLighting(FKACTOverheal_Collection[i2],
                                                                             ColorTranslator.FromHtml(ColorMappings
                                                                                 .ColorMappingACTThresholdSuccess), false,
                                                                             false);
@@ -10080,7 +10082,7 @@ using EasyHttp.Http;
                                                                 {
                                                                     for (var i2 = 0; i2 < FKACTDamage_Collection.Length; i2++)
                                                                     {
-                                                                        GlobalApplyMapKeyLighting(FKACTDamage_Collection[i2],
+                                                                        GlobalApplyMapFKeyLighting(FKACTDamage_Collection[i2],
                                                                             ColorTranslator.FromHtml(ColorMappings
                                                                                 .ColorMappingACTThresholdSuccess), false,
                                                                             false);
@@ -10323,7 +10325,7 @@ using EasyHttp.Http;
                                                                     break;
                                                                 }
 
-                                                                GlobalApplyMapKeyLighting(FKACTDPS_Collection[i2],
+                                                                GlobalApplyMapFKeyLighting(FKACTDPS_Collection[i2],
                                                                     ColorTranslator.FromHtml(ColorMappings
                                                                         .ColorMappingACTThresholdEmpty), false, false);
                                                             }
@@ -10340,7 +10342,7 @@ using EasyHttp.Http;
                                                                     break;
                                                                 }
 
-                                                                GlobalApplyMapKeyLighting(FKACTEnrage_Collection[i2],
+                                                                GlobalApplyMapFKeyLighting(FKACTEnrage_Collection[i2],
                                                                     ColorTranslator.FromHtml(ColorMappings
                                                                         .ColorMappingACTEnrageEmpty), false, false);
                                                             }
