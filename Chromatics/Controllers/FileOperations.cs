@@ -5,8 +5,10 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using System.Data;
 using Chromatics.Controllers;
 using Chromatics.Datastore;
+using Chromatics.FFXIVInterfaces;
 
 namespace Chromatics
 {
@@ -125,7 +127,7 @@ namespace Chromatics
                 dr.KeypadZ3Bind = _KeyBindMap[3];
             if (_KeyBindMap.ContainsKey(4))
                 dr.KeypadZ4Bind = _KeyBindMap[4];
-            if (_KeyBindMap.ContainsKey(5)) 
+            if (_KeyBindMap.ContainsKey(5))
                 dr.KeypadZ5Bind = _KeyBindMap[5];
             if (_KeyBindMap.ContainsKey(6))
                 dr.KeypadZ6Bind = _KeyBindMap[6];
@@ -215,7 +217,7 @@ namespace Chromatics
                 var lifxEx = _lifx.LifxModeMemory.Select(lp => lp.Key + "|" + lp.Value + "|" + _lifx.LifxStateMemory[lp.Key]).ToArray();
                 lifxLoad = string.Join(",", lifxEx);
             }
-            
+
             dr.DeviceOperationLifxDevices = lifxLoad;
 
             try
@@ -252,7 +254,7 @@ namespace Chromatics
                     try
                     {
                         var reader = new XmlSerializer(ds.GetType());
-                        var dr = (DeviceDataStore) reader.Deserialize(sr);
+                        var dr = (DeviceDataStore)reader.Deserialize(sr);
                         sr.Close();
 
                         _razerDeviceKeyboard = dr.DeviceOperationRazerKeyboard;
@@ -308,7 +310,7 @@ namespace Chromatics
                         _SDKAsus = dr.SDKAsus;
                         _SDKMystic = dr.SDKMystic;
                         _SDKLifx = dr.SDKLifx;
-                        
+
                         _KeysSingleKeyModeEnabled = dr.KeysSingleKeyModeEnabled;
                         _KeysSingleKeyMode = Helpers.ConvertStringToDevMode(dr.KeySingleKeyMode);
 
@@ -495,7 +497,7 @@ namespace Chromatics
                                 //BulbModeTypes LMode = BulbModeTypes.DISABLED;
                                 //LMode = LState[1].ToString();
                                 //int.TryParse(LState[1], out LMode);
-                                var lMode = (BulbModeTypes) Enum.Parse(typeof(BulbModeTypes), lState[1]);
+                                var lMode = (BulbModeTypes)Enum.Parse(typeof(BulbModeTypes), lState[1]);
 
                                 var lEnabled = 0;
                                 int.TryParse(lState[2], out lEnabled);
@@ -519,7 +521,7 @@ namespace Chromatics
                                 }
                             }
                         }
-                        
+
                         WriteConsole(ConsoleTypes.System, @"devices.chromatics loaded.");
                     }
                     catch (Exception ex)
@@ -548,7 +550,7 @@ namespace Chromatics
                 }
             }
         }
-        
+
         private void SaveColorMappings(int report)
         {
             //if (report == 1)
@@ -593,7 +595,7 @@ namespace Chromatics
                     try
                     {
                         var reader = new XmlSerializer(ColorMappings.GetType());
-                        var colorMappings = (FfxivColorMappings) reader.Deserialize(sr);
+                        var colorMappings = (FfxivColorMappings)reader.Deserialize(sr);
                         sr.Close();
 
                         ColorMappings = colorMappings;
@@ -671,7 +673,7 @@ namespace Chromatics
                     try
                     {
                         var reader = new XmlSerializer(ChromaticsSettings.GetType());
-                        var chromaticsSettings = (ChromaticsSettings) reader.Deserialize(sr);
+                        var chromaticsSettings = (ChromaticsSettings)reader.Deserialize(sr);
                         sr.Close();
 
                         ChromaticsSettings = chromaticsSettings;
@@ -705,6 +707,77 @@ namespace Chromatics
             }
         }
 
+        private void SaveSpellsColors(int report)
+        {
+            var enviroment = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
+            var path = enviroment + @"/spells.chromatics";
+
+            DataTable dt = new DataTable();
+            dt.TableName = "Spell";
+            DataSet ds = new DataSet();
+            //Adding columns to datatable
+            DataColumn column_name = new DataColumn("Name");
+            dt.Columns.Add(column_name);
+            DataColumn column_color = new DataColumn("Color");
+            dt.Columns.Add(column_color);
+            //adding new rows
+
+            foreach (DataGridViewRow DataGVRow in dG_spells.Rows)
+            {
+                DataRow dataRow = dt.NewRow();
+                // Add's only the columns that you want
+                dataRow["Name"] = DataGVRow.Cells[0].Value;
+                dataRow["Color"] = DataGVRow.Cells[1].Value;
+
+                dt.Rows.Add(dataRow); //dt.Columns.Add();
+            }
+            //Copying from datatable to dataset
+            ds.DataSetName = "Spells";
+            ds.Tables.Add(dt);
+
+            //Finally the save part:
+            try
+            {
+                ds.WriteXml(path);
+            }
+            catch (Exception ex)
+            {
+                WriteConsole(ConsoleTypes.Error, @"Error saving states to spells.chromatics. Error: " + ex.Message);
+            }
+
+        }
+
+        private void LoadSpellsColors()
+        {
+            WriteConsole(ConsoleTypes.System, @"Searching for spells.chromatics..");
+            var enviroment = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
+            var path = enviroment + @"/spells.chromatics";
+
+            if (File.Exists(path))
+            {
+                //Read Device Save
+                WriteConsole(ConsoleTypes.System, @"Attempting to load spells.chromatics..");
+
+                try
+                {
+                    DataSet ds = new DataSet();
+                    ds.ReadXml(path);
+                    dG_spells.DataSource = ds.Tables[0];
+
+                    WriteConsole(ConsoleTypes.System, @"spells.chromatics loaded.");
+                }
+                catch (Exception ex)
+                {
+                    WriteConsole(ConsoleTypes.Error, @"Error loading spells.chromatics. Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                //Create Device Save
+                WriteConsole(ConsoleTypes.System, @"spells.chromatics not found. Creating one..");
+            }
+        }
+
         private void ImportColorMappings()
         {
             var open = new OpenFileDialog();
@@ -735,7 +808,7 @@ namespace Chromatics
                     using (var sr = new StreamReader(open.FileName))
                     {
                         var reader = new XmlSerializer(ColorMappings.GetType());
-                        var colorMappings = (FfxivColorMappings) reader.Deserialize(sr);
+                        var colorMappings = (FfxivColorMappings)reader.Deserialize(sr);
                         sr.Close();
 
                         ColorMappings = colorMappings;
@@ -832,7 +905,7 @@ namespace Chromatics
             save.SupportMultiDottedExtensions = false;
             save.Title = "Export Debug Log";
             save.ValidateNames = true;
-            
+
 
             if (save.ShowDialog() == DialogResult.OK)
             {
@@ -863,7 +936,7 @@ namespace Chromatics
                         sw.Write("======CHROMATICS SETTINGS=====");
                         sw.WriteLine();
                         sw.WriteLine();
-                        
+
                         if (File.Exists(SettingsPath))
                         {
                             //Read Device Save
@@ -878,7 +951,7 @@ namespace Chromatics
                                 catch (Exception ex)
                                 {
                                     sw.Write("Exception occurred while reading settings.chromatics. Exception: " +
-                                             ex.Message);
+                                       ex.Message);
                                 }
                             }
                         }
@@ -894,7 +967,7 @@ namespace Chromatics
                         sw.Write("======CHROMATICS DEVICES=====");
                         sw.WriteLine();
                         sw.WriteLine();
-                        
+
                         if (File.Exists(DevicesPath))
                         {
                             //Read Device Save
@@ -909,7 +982,7 @@ namespace Chromatics
                                 catch (Exception ex)
                                 {
                                     sw.Write("Exception occurred while reading devices.chromatics. Exception: " +
-                                             ex.Message);
+                                       ex.Message);
                                 }
                             }
                         }
@@ -925,7 +998,7 @@ namespace Chromatics
                         sw.Write("======CHROMATICS MAPPINGS=====");
                         sw.WriteLine();
                         sw.WriteLine();
-                        
+
                         if (File.Exists(MappingsPath))
                         {
                             //Read Device Save
@@ -940,7 +1013,7 @@ namespace Chromatics
                                 catch (Exception ex)
                                 {
                                     sw.Write("Exception occurred while reading mappings.chromatics. Exception: " +
-                                             ex.Message);
+                                       ex.Message);
                                 }
                             }
                         }
@@ -955,7 +1028,7 @@ namespace Chromatics
                         sw.Write("======CHROMATICS ACTDATA=====");
                         sw.WriteLine();
                         sw.WriteLine();
-                        
+
                         if (File.Exists(ACTPath))
                         {
                             //Read Device Save
@@ -970,7 +1043,7 @@ namespace Chromatics
                                 catch (Exception ex)
                                 {
                                     sw.Write("Exception occurred while reading actdata.chromatics. Exception: " +
-                                             ex.Message);
+                                       ex.Message);
                                 }
                             }
                         }

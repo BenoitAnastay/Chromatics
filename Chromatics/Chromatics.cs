@@ -415,7 +415,7 @@ namespace Chromatics
             LoadDevices();
             LoadChromaticsSettings();
             LoadColorMappings();
-
+            LoadSpellsColors();
 
             //Check Administrator permissions
             if (!IsAdministrator())
@@ -939,7 +939,15 @@ namespace Chromatics
 
         private delegate void BlinkDelegate();
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveSpellsColors(0);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadSpellsColors();
+        }
     }
 
     public static class ExceptionExtensions

@@ -984,6 +984,11 @@ namespace Chromatics
             }
         }
 
+        private void dG_spells_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // SaveSpellsColors(0);
+        }
+
         private void btn_palette_undo_Click(object sender, EventArgs e)
         {
             var pmcs = dG_mappings.CurrentRow;
